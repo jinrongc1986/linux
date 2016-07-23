@@ -1,0 +1,4 @@
+1.bash /home/jinrongc/foo.sh >>/home/jinrongc/log
+2.crontab -e添加bash任务
+  * * * * * bash /home/jinrongc/foo.sh >>/home/jinrongc/log
+3.cat /home/jinrongc/log
