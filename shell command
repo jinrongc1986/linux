@@ -2,3 +2,18 @@
 2.crontab -e添加bash任务
   * * * * * bash /home/jinrongc/foo.sh >>/home/jinrongc/log
 3.cat /home/jinrongc/log
+4. 在ls中列出文件的绝对路径 2008-12-15 09:57:03
+分类： LINUX
+ls | sed "s:^:`pwd`/:"
+# 就是在每行记录的开头加上当前路径
+
+ps:
+#在所有行之前/后加入某个字符串
+sed 's/^/string/g' file
+sed 's/$/string/g' file
+ 
+find  $PWD -maxdepth 1  | xargs ls -ld
+# 列出当前目录下的所有文件（包括隐藏文件）的绝对路径， 对目录不做递归
+ 
+find  $PWD | xargs ls -ld
+# 递归列出当前目录下的所有文件（包括隐藏文件）的绝对路径
