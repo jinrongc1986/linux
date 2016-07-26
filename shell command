@@ -15,5 +15,5 @@ sed 's/$/string/g' file
 find  $PWD -maxdepth 1  | xargs ls -ld
 # 列出当前目录下的所有文件（包括隐藏文件）的绝对路径， 对目录不做递归
  
-find  $PWD | xargs ls -ld
-# 递归列出当前目录下的所有文件（包括隐藏文件）的绝对路径
+find  $PWD | xargs ls -ld -v | grep -v drwxr | grep -v lrwxr
+# 递归列出当前目录下的所有文件（包括隐藏文件）的绝对路径 ，不包括drwxr和lrwxr目录
